@@ -1,0 +1,14 @@
+{
+  "en": {
+    "v0.0.4": {
+      "index": "index.html",
+      "explain": "01-tips.html"
+    }
+  },
+  "zh-TW": {
+    "v0.0.4": {
+      "index": "index.html",
+      "explain": "01-tips.html"
+    }
+  }
+}

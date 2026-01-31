@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Bambook使用文件_V0.0.4</title>
+  <link rel="stylesheet" href="/assets/style/style.css?v=1769835191">
+  <link rel="stylesheet" href="/assets/style/prism-okaidia.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chiron+Hei+HK:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link rel="icon" href="/assets/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link rel="canonical" href="./">
+  
+    
+    <link rel="alternate" hreflang="en" href="/en/v0.0.4/index.html">
+  
+    
+    <link rel="alternate" hreflang="zh-TW" href="/zh-TW/v0.0.4/index.html">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet">
+</head>
+<body style="  text-autospace: normal;word-break: auto-phrase;">
+  <button class="hamburger" id="sidebarToggle" aria-label="Open menu" aria-haspopup="true" aria-controls="sidebarBox" aria-expanded="false">
+    <span class="material-symbols-outlined">menu</span>
+  </button>
+  <div id="sidebarBackdrop" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:998;"></div>
+
+  <aside class="sidebar_box xingothic-tc-w5" id="sidebarBox" aria-hidden="true">
+  <div>
+  
+  <nav class="doc-switchers" aria-label="Language and version switchers">
+    
+      <ul class="lang-switcher" style="list-style:none;display:flex;gap:4px;padding:0;margin:0;">
+        
+          
+          <li class="" style="margin:0px;">
+            
+              <a href="/en/v0.0.4/index.html" class="capsule" >en</a>
+            
+          </li>
+        
+          
+          <li class="active" style="margin:0px;">
+            
+              <span class="current capsule" style="color:rgba(0, 0, 0, 1);background-color: white;" aria-current="true" >zh-TW</span>
+            
+          </li>
+        
+      </ul>
+    
+
+    
+      <ul class="version-switcher" style="list-style:none;display:flex;gap:8px;padding:0;margin:0;">
+        
+          
+          <li class="active"  style="margin:0px;">
+            
+              <span class="current capsule" style="color:rgba(0, 0, 0, 1);background-color: white;" aria-current="true" >v0.0.4</span>
+            
+          </li>
+        
+      </ul>
+    
+  </nav>
+
+  </div>
+    <section>
+      <div id="sidebar">
+        
+          <a href="./index.html">Bambook使用文件_V0.0.4</a>
+        
+          <a href="./01-tips.html">名詞解釋與排印說明</a>
+        
+      </div>
+    </section>
+  </aside>
+
+  <main id="content">
+
+
+
+    <h1 id="MainTitle">Bambook使用文件_V0.0.4</h1>
+    <hr/>
+
+
+<nav class="page-toc" aria-label="Table of contents">
+  <ol class="toc-h2">
+    
+      <li>
+        <a href="#開始使用">開始使用</a>
+        
+      </li>
+    
+      <li>
+        <a href="#bambooktext-語法示意">BambookText 語法示意</a>
+        
+      </li>
+    
+      <li>
+        <a href="#參數詳解">參數詳解</a>
+        
+      </li>
+    
+      <li>
+        <a href="#bambooklanguage-的重要性">BambookLanguage 的重要性</a>
+        
+      </li>
+    
+      <li>
+        <a href="#語法範例">語法範例</a>
+        
+      </li>
+    
+      <li>
+        <a href="#警語">警語</a>
+        
+      </li>
+    
+      <li>
+        <a href="#授權">授權</a>
+        
+      </li>
+    
+      <li>
+        <a href="#備註">備註</a>
+        
+      </li>
+    
+  </ol>
+</nav>
+
+
+    <article class="doc-body"><h1 id="bambook-一款開源的flutter垂直排版套件">Bambook 一款開源的Flutter垂直排版套件。</h1>
+
+<p>垂直文本對於中、日、韓、越以及蒙古文…等，十分常見，然Flutter中<strong>卻未</strong>提供垂直文本框。Bambook套件提供的相關方法，能夠使開發者快速配置垂直文本。</p>
+
+<p><img src="/assets/images/003.jpg" alt="垂直文本排版的可能，示意圖" class="showImage"></p>
+
+<p>pub.dev連結：<a href="https://pub.dev/packages/bambook/">https://pub.dev/packages/bambook/</a></p>
+
+<h2 id="開始使用">開始使用</h2>
+
+<p>首先，請在您的 <code>pubspec.yaml</code> 檔案中加入 <code>bambook</code> 的依賴：</p>
+
+<pre><code class="language-yaml">dependencies:
+  bambook: ^0.0.4 # 或更新
+</code></pre>
+
+<p>接著，在您的 Dart 程式碼中匯入套件：</p>
+
+<pre><code class="language-dart">import 'package:bambook/bambook.dart';
+</code></pre>
+
+<h2 id="bambooktext-語法示意">
+<code>BambookText</code> 語法示意</h2>
+
+<p><code>BambookText</code> 是本套件的核心 Widget，用法與 Flutter 原生的 <code>Text</code> Widget 非常相似。</p>
+
+<pre><code class="language-dart">const BambookText(
+  "四季遞嬗，日月更迭，唯有筆墨如石堅。--TwinType",
+  style: TextStyle(
+    fontSize: 22,
+    color: Color.fromARGB(255, 8, 19, 76),
+    fontFamily: 'LINESeed-TW_Rg',
+  ),
+  textAlign: BambookTextAlign.justify,
+  language: BambookLanguage.tc,
+  direction: BambookTextDirection.rtl,
+  orientation: BambookTextOrientation.mixed,
+  applyKinsoku: true,
+  tateChuYoko: (false, 0), 
+  punctuationFixMode: PunctuationFixMode.auto,
+  lineSpacing: 24.0,
+  letterSpacing: -10,
+);
+
+</code></pre>
+
+<h2 id="參數詳解">參數詳解</h2>
+
+<p>以下是 <code>BambookText</code> 各個參數的詳細說明：</p>
+
+<div style="overflow-x:scroll;">
+<table>
+  <thead>
+    <tr>
+      <th>參數名 (Parameter)</th>
+        <th>中文名稱</th>
+      <th>型別 (Type)</th>
+      <th>預設值 (Default)</th>
+      <th style="text-align: left; min-width: 600px;">說明 (Description)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>data</code></td>
+      <td>文本值</td>
+      <td><code>String</code></td>
+      <td><strong>必填</strong></td>
+      <td style="text-align: left">您想要顯示的文字內容。</td>
+    </tr>
+    <tr>
+      <td><code>style</code></td>
+      <td>樣式</td>
+      <td><code>TextStyle?</code></td>
+      <td><code>null</code></td>
+      <td style="text-align: left">文字樣式，支援 <code>fontSize</code> 等屬性。</td>
+    </tr>
+    <tr>
+      <td><code>textAlign</code></td>
+      <td>文本對齊方法</td>
+      <td><code>BambookTextAlign</code></td>
+      <td><code>BambookTextAlign.top</code></td>
+      <td style="text-align: left">設定<strong>單一行的垂直對齊方式</strong>。可選值有：<code>top</code> (頂端對齊)、<code>center</code> (置中對齊)、<code>bottom</code> (底端對齊)、<code>justify</code> (頂底齊行)。</td>
+    </tr>
+    <tr>
+      <td><code>direction</code></td>
+      <td>換行方向</td>
+      <td><code>BambookTextDirection</code></td>
+      <td><code>BambookTextDirection.rtl</code></td>
+      <td style="text-align: left">設定<strong>換行方向</strong>。可選值有：<code>rtl</code> (由右至左換行，適用於傳統 CJK 書寫) 或 <code>ltr</code> (由左至右換行)。</td>
+    </tr>
+    <tr>
+      <td><code>orientation</code></td>
+      <td>拉丁與數字行中處理方法</td>
+      <td><code>BambookTextOrientation</code></td>
+      <td><code>BambookTextOrientation.mixed</code></td>
+      <td style="text-align: left">此子Latin與數字的<strong>字符方向</strong>一共分為三種設定。第一：<code>mixed</code>將使其以組為單位順時針旋轉90度，第二：<code>upright</code> 則會讓其保持直立；第三：<code>tateChuYoko</code>此設定會使所有拉丁與數字變為橫排</td>
+    </tr>
+    <tr>
+      <td><code>language</code></td>
+      <td>語系</td>
+      <td><code>BambookLanguage</code></td>
+      <td><code>BambookLanguage.tc</code></td>
+      <td style="text-align: left">
+<strong>文種設定，這會影響標點符號的預設位置</strong>。<code>tc</code> (繁體中文) 會讓標點符號置中；而 <code>sc</code> (簡體中文)、<code>jp</code> (日文)、<code>kr</code> (韓文) 則會讓標點符號靠上對齊。這個設定是為了符合不同地區的排版習慣。</td>
+    </tr>
+    <tr>
+      <td><code>applyKinsoku</code></td>
+      <td>避頭尾</td>
+      <td><code>bool</code></td>
+      <td><code>true</code></td>
+      <td style="text-align: left">是否啟用<strong>避頭尾規則 (Kinsoku)</strong>。開啟後，可以防止逗號、句號等標點符號出現在一行的開頭。</td>
+    </tr>
+    <tr>
+      <td><code>lineSpacing</code></td>
+      <td>行距</td>
+      <td><code>double</code></td>
+      <td><code>10.0</code></td>
+      <td style="text-align: left">
+<strong>額外欄間距</strong>。設定<strong>欄與欄之間</strong>額外增加的空白距離 (邏輯像素 px)。<br><strong>警告：</strong> 建議您不要使用<code>text.style</code>中的<code>height</code>，或將其設為<code>1</code>因其為Flutter預設文本的參數，套用到Bambook後會導致錯誤。
+</td>
+    </tr>
+    <tr>
+      <td><code>letterSpacing</code></td>
+      <td>字元間距</td>
+      <td><code>double</code></td>
+      <td><code>0.0</code></td>
+      <td style="text-align: left">
+<strong>垂直字元間距</strong>。設定<strong>同一行中</strong>每個字元之間的額外垂直距離。<br><strong>警告：</strong>請勿使用 <code>style.letterSpacing</code>，因為它會導致字元<strong>水平變寬</strong> (行寬變大)，而非增加垂直間距。若要調整直排字距，請務必使用此參數。</td>
+    </tr>
+    <tr>
+      <td><code>punctuationFixMode</code></td>
+      <td>標點位置修正</td>
+      <td><code>PunctuationFixMode</code></td>
+      <td><code>PunctuationFixMode.auto</code></td>
+      <td style="text-align: left">
+<strong>標點符號修正模式</strong>。由於不同作業系統（特別是 Android）對 CJK 字體的支援度不一，部分字體的標點符號（如逗號、句號）在垂直排版時可能會偏離中心線。此參數用於修正此問題：<br>- <code>auto</code>：會根據您是否配置字體為依據<br>- <code>force</code>：強制啟用修正。<br>- <code>disable</code>：停用修正。若您已使用自訂字體（如 <code>Noto Sans TC</code>）或在 iOS/macOS 開發，建議設為 <code>disable</code> 以獲得最佳效能與效果。</td>
+    </tr>
+    <tr>
+      <td><code>tateChuYoko</code></td>
+      <td>縱中橫例外處理</td>
+      <td><code>(bool, int)?</code></td>
+      <td><code>null</code></td>
+      <td style="text-align: left">
+<strong>縱中橫 (Tate-chu-yoko)</strong> 功能。當設定為 <code>(bool, N)</code> 時，長度<strong>小於或等於 N</strong> 的連續西文或數字會自動轉為橫向排列，嵌入在垂直文字流中。例如，<code>tateChuYoko: (true, 2)</code> 會讓 “A1”、”25” 等字串橫排顯示。若為 <code>null</code> 則停用此功能。如果設為<code>(false, 2)</code>仍為關閉。</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="bambooklanguage-的重要性">
+<code>BambookLanguage</code> 的重要性</h2>
+
+<p><code>BambookLanguage</code> 參數不僅僅是一個提示，它會直接影響標點符號的渲染方式，以符合不同語區的標準排版規範。此外，它還會<strong>自動為底層的 <code>TextStyle</code> 設定對應的 <code>Locale</code></strong>，這有助於 Flutter 選擇更適合該語言的字體，進而影響字符的實際顯示效果。</p>
+
+<ul>
+  <li>
+<strong><code>BambookLanguage.tc</code> (繁體中文)</strong>：
+    <ul>
+      <li>標點符號（如 <code>，</code>、<code>。</code>）會被放置在字元的<strong>正中央</strong>。</li>
+      <li>自動設定 <code>Locale('zh', 'Hant')</code>。</li>
+    </ul>
+  </li>
+  <li>
+<strong><code>BambookLanguage.sc</code> (簡體中文)</strong>：
+    <ul>
+      <li>標點符號會被放置在字元框的<strong>右上角</strong>。</li>
+      <li>自動設定 <code>Locale('zh', 'CN')</code>。</li>
+    </ul>
+  </li>
+  <li>
+<strong><code>BambookLanguage.jp</code> (日文)</strong>：
+    <ul>
+      <li>標點符號會被放置在字元框的<strong>右上角</strong>。</li>
+      <li>自動設定 <code>Locale('ja', 'JP')</code>。</li>
+    </ul>
+  </li>
+  <li>
+<strong><code>BambookLanguage.kr</code> (韓文)</strong>：
+    <ul>
+      <li>標點符號會被放置在字元框的<strong>右上角</strong>。</li>
+      <li>自動設定 <code>Locale('ko', 'KR')</code>。</li>
+    </ul>
+  </li>
+</ul>
+
+<p>正確設定此參數，能確保您的排版結果在視覺上更貼近目標讀者的閱讀習慣，並獲得更精準的字體渲染。唯<mark>該設定在部分 Android 系統</mark>上出現<mark>字體調用正確</mark>，但<mark>標點錯誤</mark>之情況，因此如果您使用 Android 平台且未自定義字體，強力建議您將 <code>punctuationFixMode</code> 設為 <code>force</code> 以確保顯示正確。</p>
+
+<h2 id="語法範例">語法範例</h2>
+
+<p>請參閱專案中<code>example</code>資料夾下範例</p>
+
+<pre><code class="language-dart">import 'package:flutter/material.dart';
+import 'package:bambook/bambook.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+void main() {
+  runApp(const BambookDemo());
+}
+
+class BambookDemo extends StatefulWidget {
+  const BambookDemo({super.key});
+
+  @override
+  State&lt;BambookDemo&gt; createState() =&gt; _BambookDemoState();
+}
+
+class _BambookDemoState extends State&lt;BambookDemo&gt; {
+  double _textHeight = 400;
+  final double _minHeight = 200.0;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Bambook 垂直排版測試')),
+        body: LayoutBuilder(
+          builder: (context, constraints) {
+            final double availableHeight = constraints.maxHeight - 220;
+            return Container(
+              width: double.infinity,
+              height: double.infinity,
+              padding: const EdgeInsets.all(20),
+              color: Colors.white,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const SizedBox(height: 20),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Container(
+                      height: _textHeight &gt; availableHeight
+                          ? availableHeight
+                          : _textHeight,
+                      constraints: const BoxConstraints(maxWidth: 360),
+                      decoration: const BoxDecoration(border: null),
+                      alignment: Alignment.center,
+                      child: const BambookText(
+                        "四季遞嬗，日月更迭，唯有筆墨如石堅。--TwinType",
+                        style: TextStyle(
+                          fontSize: 22,
+                          color: Color.fromARGB(255, 8, 19, 76),
+                          fontFamily: 'LINESeed-TW_Rg',
+                        ),
+
+                        textAlign: BambookTextAlign.justify, /// 文本對齊
+                        language: BambookLanguage.tc, /// 文種模式，目前涉及標點樣式
+                        direction:BambookTextDirection.rtl,
+                        orientation: BambookTextOrientation.mixed, /// latin處理模式
+                        applyKinsoku: true, /// 避頭尾
+                        tateChuYoko: (false, 0), /// 縱中橫
+                        punctuationFixMode:PunctuationFixMode.auto, /// CJK預設字體修正，如果您未安裝對應語言字型，建議開啟
+                        lineSpacing: 24.0, /// 垂直行距
+                        letterSpacing: -10, /// 垂直字元間距
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    behavior: HitTestBehavior.translucent,
+                    onVerticalDragUpdate: (details) {
+                      setState(() {
+                        _textHeight += details.delta.dy;
+                        if (_textHeight &lt; _minHeight) _textHeight = _minHeight;
+                        if (_textHeight &gt; availableHeight) {
+                          _textHeight = availableHeight;
+                        }
+                      });
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      height: 48,
+                      alignment: Alignment.center,
+                      child: const Icon(Icons.drag_handle, color: Colors.grey),
+                    ),
+                  ),
+                  const Spacer(),
+                  const Text(
+                    "Powered By TwinType",
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 12,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+</code></pre>
+<div class="img1">
+    <img src="/assets/images/002.gif" alt="預覽" class="showImage">
+</div>
+
+<h2 id="警語">警語</h2>
+<p>本套件仍處於前期開發階段，且東亞語系十分複雜，我們致力於盡量貼近多數使用情境，目前仍在持續改進中，無法保證在所有情況下皆正確，例如：日文與冰島語混排。請您務必自行核對排版結果是否正確，特別是在涉及孩童教育等重要用途時。</p>
+
+<p>如您是語言或字體排印相關領域的專家，歡迎與我們聯繫提供建議與指正。</p>
+
+<p>本項目為 Typexedra 計畫之一，由 TwinType 支持與維護。錯誤或功能請求請提交 issue。希望這份文件能幫助您更順利地使用 Bambook！如有任何問題，歡迎隨時提出。</p>
+
+<h2 id="授權">授權</h2>
+
+<p>本套件採用<strong>MIT授權條款開源</strong>，請確保閱讀完整授權資訊，並遵守其規範。</p>
+
+<p>Copyright (C) <year> <copyright holders=""></copyright></year></p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+<h2 id="備註">備註</h2>
+<ol>
+  <li>
+    <p><code>V0.0.4</code>為首個正是面向公眾之版本，0.0.1~0.0.3為內部測試版本。此文件對應<code>Bamnook v0.0.4</code>。</p>
+  </li>
+  <li>
+    <p>本項目為Typexedra之子計畫之一，由<a href="https://twintype.co" title="TwinType">TwinType</a>支持與維護。錯誤或功能請求請提交 issue。如果您是技術或語言專案，歡迎您加入討論與分享，您可以透過Github或連繫：Willy@twintyp.co。十分感恩！</p>
+  </li>
+  <li>
+    <p>您可參閱下章節：<strong>名詞解釋與排應說明</strong>了解更多排印與Bambook使用技巧。</p>
+  </li>
+</ol>
+
+</article>
+  </main>
+
+  <!-- Prism JS -->
+    <script src="https://unpkg.com/prismjs/prism.js"></script>
+    <script src="https://unpkg.com/prismjs/components/prism-ruby.min.js"></script>
+    <script src="https://unpkg.com/prismjs/components/prism-javascript.min.js"></script>
+    <script src="https://unpkg.com/prismjs/components/prism-python.min.js"></script>
+    <script src="https://unpkg.com/prismjs/components/prism-markdown.min.js"></script>
+    <script src="https://unpkg.com/prismjs/components/prism-bash.min.js"></script>
+    <script src="https://unpkg.com/prismjs/components/prism-dart.min.js"></script>
+    <script src="https://unpkg.com/prismjs/components/prism-yaml.min.js"></script>
+
+  
+    <script src="/assets/script/extras.js"></script>
+  <script>
+  (function liveReload(){
+    var last=null;
+    function tick(){
+      fetch('/.stamp',{cache:'no-store'}).then(function(r){
+        if(!r.ok) return;
+        return r.text();
+      }).then(function(txt){
+        if(typeof txt!=='string') return;
+        if(last && last!==txt) location.reload();
+        last = txt;
+      }).catch(function(){});
+      setTimeout(tick,1000);
+    }
+    tick();
+  })();
+  </script>
+
+
+  <script>
+  (function(){
+    var mqMobile = window.matchMedia('(max-width: 600px)');
+    var body = document.body;
+    var sidebar = document.getElementById('sidebarBox');
+    var toggleBtn = document.getElementById('sidebarToggle');
+    var backdrop = document.getElementById('sidebarBackdrop');
+    if(!sidebar || !toggleBtn || !backdrop) return;
+
+    var isOpen = false, lastScrollY = 0;
+
+    function lockScroll(){
+      lastScrollY = window.scrollY || window.pageYOffset || 0;
+      body.style.position = 'fixed';
+      body.style.top = (-lastScrollY) + 'px';
+      body.style.left = '0'; body.style.right = '0'; body.style.width = '100%';
+    }
+    function unlockScroll(){
+      body.style.position = '';
+      body.style.top = ''; body.style.left = ''; body.style.right = ''; body.style.width = '';
+      window.scrollTo(0,lastScrollY);
+    }
+    function openSidebar(){
+      if(isOpen) return;
+      isOpen = true;
+      sidebar.classList.add('active');
+      sidebar.setAttribute('aria-hidden','false');
+      toggleBtn.setAttribute('aria-expanded','true');
+      backdrop.style.display = 'block';
+      lockScroll();
+    }
+    function closeSidebar(){
+      if(!isOpen) return;
+      isOpen = false;
+      sidebar.classList.remove('active');
+      sidebar.setAttribute('aria-hidden','true');
+      toggleBtn.setAttribute('aria-expanded','false');
+      backdrop.style.display = 'none';
+      unlockScroll();
+    }
+    function toggleSidebar(){
+      if(!mqMobile.matches) return;
+      isOpen ? closeSidebar() : openSidebar();
+    }
+
+    toggleBtn.addEventListener('click', toggleSidebar);
+    backdrop.addEventListener('click', closeSidebar);
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape' && isOpen) closeSidebar(); });
+    sidebar.addEventListener('click', function(e){
+      var a = e.target.closest('a');
+      if(a && mqMobile.matches){ setTimeout(closeSidebar,0); }
+    });
+    mqMobile.addEventListener('change', function(ev){
+      if(!ev.matches){ closeSidebar(); }
+    });
+
+    var sx=0, sy=0;
+    sidebar.addEventListener('touchstart', function(e){
+      if(!mqMobile.matches) return;
+      var t=e.touches[0]; sx=t.clientX; sy=t.clientY;
+    }, {passive:true});
+    sidebar.addEventListener('touchend', function(e){
+      if(!mqMobile.matches) return;
+      var t=e.changedTouches[0], dx=t.clientX-sx, dy=Math.abs(t.clientY-sy);
+      if(dx < -60 && dy < 40){ closeSidebar(); }
+    }, {passive:true});
+  })();
+  </script>
+  <script>
+workbox.routing.registerRoute(
+  ({request}) => request.destination === 'video',
+  new workbox.strategies.CacheFirst({
+    plugins: [new workbox.rangeRequests.Plugin()],
+    cacheName: 'videos',
+  })
+);
+  </script>
+</body>
+</html>

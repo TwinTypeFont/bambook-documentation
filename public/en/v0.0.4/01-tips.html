@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Terms & Typography Guide</title>
+  <link rel="stylesheet" href="/assets/style/style.css?v=1769835191">
+  <link rel="stylesheet" href="/assets/style/prism-okaidia.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chiron+Hei+HK:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link rel="icon" href="/assets/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link rel="canonical" href="./01-tips.html">
+  
+    
+    <link rel="alternate" hreflang="en" href="/en/v0.0.4/01-tips.html">
+  
+    
+    <link rel="alternate" hreflang="zh-TW" href="/zh-TW/v0.0.4/01-tips.html">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet">
+</head>
+<body style="  text-autospace: normal;word-break: auto-phrase;">
+  <button class="hamburger" id="sidebarToggle" aria-label="Open menu" aria-haspopup="true" aria-controls="sidebarBox" aria-expanded="false">
+    <span class="material-symbols-outlined">menu</span>
+  </button>
+  <div id="sidebarBackdrop" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:998;"></div>
+
+  <aside class="sidebar_box xingothic-tc-w5" id="sidebarBox" aria-hidden="true">
+  <div>
+  
+  <nav class="doc-switchers" aria-label="Language and version switchers">
+    
+      <ul class="lang-switcher" style="list-style:none;display:flex;gap:4px;padding:0;margin:0;">
+        
+          
+          <li class="active" style="margin:0px;">
+            
+              <span class="current capsule" style="color:rgba(0, 0, 0, 1);background-color: white;" aria-current="true" >en</span>
+            
+          </li>
+        
+          
+          <li class="" style="margin:0px;">
+            
+              <a href="/zh-TW/v0.0.4/01-tips.html" class="capsule" >zh-TW</a>
+            
+          </li>
+        
+      </ul>
+    
+
+    
+      <ul class="version-switcher" style="list-style:none;display:flex;gap:8px;padding:0;margin:0;">
+        
+          
+          <li class="active"  style="margin:0px;">
+            
+              <span class="current capsule" style="color:rgba(0, 0, 0, 1);background-color: white;" aria-current="true" >v0.0.4</span>
+            
+          </li>
+        
+      </ul>
+    
+  </nav>
+
+  </div>
+    <section>
+      <div id="sidebar">
+        
+          <a href="./index.html">Bambook-DOC_V0.0.4</a>
+        
+          <a href="./01-tips.html">Terms & Typography Guide</a>
+        
+      </div>
+    </section>
+  </aside>
+
+  <main id="content">
+
+
+
+    <h1 id="MainTitle">Terms & Typography Guide</h1>
+    <hr/>
+
+
+<nav class="page-toc" aria-label="Table of contents">
+  <ol class="toc-h2">
+    
+      <li>
+        <a href="#cjk-typesetting-the-nitty-gritty">CJK Typesetting: The Nitty-Gritty</a>
+        
+          <ol class="toc-h3">
+            
+              <li><a href="#cjk-fonts--glyph-variations">CJK Fonts & Glyph Variations</a></li>
+            
+              <li><a href="#utr-50">UTR #50</a></li>
+            
+              <li><a href="#iso-639-1">ISO 639-1</a></li>
+            
+              <li><a href="#w3c">W3C</a></li>
+            
+          </ol>
+        
+      </li>
+    
+      <li>
+        <a href="#cjk-layout-principles--bambook-pro-tips">CJK Layout Principles & Bambook Pro-Tips</a>
+        
+          <ol class="toc-h3">
+            
+              <li><a href="#direction-of-text-flow">Direction of Text, (Flow)</a></li>
+            
+              <li><a href="#vertical-text-alignment">Vertical Text Alignment</a></li>
+            
+              <li><a href="#punctuation-in-vertical-layouts">Punctuation in Vertical Layouts</a></li>
+            
+              <li><a href="#handling-latin--digits-in-vertical-text">Handling Latin & Digits in Vertical Text</a></li>
+            
+              <li><a href="#kinsoku-line-breaking-rules">Kinsoku (Line Breaking Rules)</a></li>
+            
+              <li><a href="#line-height--character-spacing">Line Height & Character Spacing</a></li>
+            
+          </ol>
+        
+      </li>
+    
+  </ol>
+</nav>
+
+
+    <article class="doc-body"><style>
+    p{
+        text-align:start;
+    }
+</style>
+
+<h2 id="cjk-typesetting-the-nitty-gritty">CJK Typesetting: The Nitty-Gritty</h2>
+
+<p>This doc is your guide to mastering high-quality vertical text layout using the <code>Bambook</code> package.</p>
+
+<h3 id="cjk-fonts--glyph-variations">CJK Fonts &amp; Glyph Variations</h3>
+<p>“CJK” is the tech world’s shorthand for <strong>Chinese, Japanese, and Korean</strong>. Unicode groups most of their shared characters into the same blocks. But in reality, “Chinese” splits further into Traditional (Traditional Chinese) and Simplified (Simplified Chinese). And if you want to get specific, Traditional Chinese has its own flavors for Hong Kong and Taiwan.</p>
+
+<p>Characters might <em>look</em> the same, but their “glyph shapes” vary by region. Take “Source Han Sans” (Noto Sans CJK) for example. The Traditional Chinese version follows Taiwan’s Ministry of Education standard (Standard Form of National Characters), looking a bit more like Kai style. The Hong Kong version follows its own local conventions. The Simplified Chinese version sticks to China’s GB-18030 standard. Japanese follows JIS, and Korean glyphs keep a more traditional “block-print” vibe.</p>
+
+<p><img src="/assets/images/f879a8a3f3771c9801a064670b549b67.jpg" alt="Regional Glyph Variations" class="showImage"></p>
+
+<p>Even within “Traditional Chinese Heiti (roughly equivalent to Latin sans-serif, but NOT THE SAME),” there are differences.</p>
+
+<p><img src="/assets/images/e3897b31a833ae2aa417ae94eaadac86.jpg" alt="Slight variations in Traditional Chinese fonts" class="showImage"></p>
+
+<p class="tips-info">This package focuses on <strong>CJK punctuation and layout rules</strong> (like punctuation positioning, general conventions, etc.). We don’t mess with the actual font glyph shapes—that’s the font’s job.</p>
+
+<h3 id="utr-50">UTR #50</h3>
+<p>UTR #50 stands for <strong>Unicode Technical Report #50</strong>. It’s the bible for vertical text layout in Unicode, covering orientation and rules for Latin characters too. It defines three main orientation properties: U (Upright), R (Rotated 90° clockwise side-ways), Tu (Transformed Upright), and Tr (Transformed Rotated).</p>
+
+<p class="tips-info">Bambook tries its best to stick to UTR #50 specs, so you don’t have to worry about the deep magic.</p>
+
+<h3 id="iso-639-1">ISO 639-1</h3>
+<p>ISO 639-1 is the international standard for two-letter language codes (Alpha-2). We use these to label languages, often paired with BCP 47 (like <code>zh-TW</code>).</p>
+
+<h3 id="w3c">W3C</h3>
+<p>The World Wide Web Consortium. They define the web standards we live by (HTML, CSS).</p>
+
+<p class="tips-info">Bambook’s syntax often takes inspiration from CSS declarations. Because why reinvent the wheel?</p>
+
+<hr>
+
+<h2 id="cjk-layout-principles--bambook-pro-tips">CJK Layout Principles &amp; Bambook Pro-Tips</h2>
+<p>This chapter covers the basics of vertical CJK typesetting. Actual usage might vary based on region or personal style. Think of these as “pirate guidelines” rather than strict laws—adjust as needed!</p>
+
+<h3 id="direction-of-text-flow">Direction of Text, (Flow)</h3>
+
+<p>In vertical layout for Chinese, Japanese, and Korean, text almost always flows <strong>Top-to-Bottom, Right-to-Left</strong>. Traditional Mongolian, on the other hand, flows Left-to-Right.</p>
+
+<p><img src="/assets/images/1ff52e336e1bf01241eb10f76dc0c669.jpg" alt="各語系間，標點符號位置差異" class="showImage"></p>
+
+<h3 id="vertical-text-alignment">Vertical Text Alignment</h3>
+<p><code>Bambook</code> gives you 4 strategies to align your text columns:</p>
+
+<ol>
+  <li>
+<strong>Top</strong> (Block A): Pins text to the top edge. Default behavior.</li>
+  <li>
+<strong>Center</strong> (Block B): Floats text in the vertical center.</li>
+  <li>
+<strong>Bottom</strong> (Block C): Anchors text to the bottom edge.</li>
+  <li>
+<strong>Justify</strong> (Block D): Distributed alignment. It automatically adjusts character spacing so the column hits both top and bottom edges perfectly.</li>
+</ol>
+
+<p><img src="/assets/images/7a88f18ed4f685b50aeffa39b8542fc0.jpg" alt="Text Alignment Diagram" class="showImage"></p>
+
+<h3 id="punctuation-in-vertical-layouts">Punctuation in Vertical Layouts</h3>
+<p>Generally, Traditional Chinese places punctuation in the <strong>center</strong> of the vertical line. Simplified Chinese and Japanese place it in the <strong>top-right</strong> corner of the character box. (Korean rarely uses vertical mixed script nowadays, so we’ll skip that).</p>
+
+<p>For the best results, make sure you set <code>BambookLanguage</code> correctly <strong>AND</strong> use a matching font. If you’re designing a Traditional Chinese interface but using a Simplified Chinese or Japanese font (or vice versa), your punctuation might look wonky even with the correct language setting.</p>
+
+<p><img src="/assets/images/60bd3660d7c06709bdd01d96263ab584.jpg" alt="Punctuation differences" class="showImage"></p>
+
+<p class="tips-tip">On some Android versions, the default system font might load the correct Chinese characters but still use Simplified Chinese punctuation shapes/positions. In this case, we recommend enabling <code>punctuationFixMode</code>.</p>
+
+<h3 id="handling-latin--digits-in-vertical-text">Handling Latin &amp; Digits in Vertical Text</h3>
+<p>Normally, we handle Latin characters and digits in two main ways:</p>
+<ol>
+  <li>
+<strong>Vertical <code>.mixed</code></strong>: (See Block A) Characters are rotated 90 degrees clockwise (standing sideways).</li>
+  <li>
+<strong>Upright <code>.upright</code></strong>: (See Block B) Characters stand upright, stacked vertically.
+(This corresponds to the U and R property values in UTR #50).</li>
+</ol>
+
+<p><code>BambookTextOrientation</code> also provides a third mode: <code>tateChuYoko</code>. This forces <strong>ALL</strong> Latin/European text to be displayed horizontally. (See Block C). <strong>Caution:</strong> This affects <em>everything</em>, regardless of length, so use it wisely!</p>
+
+<p>In Japanese typography, you often see short strings (2 digits or letters) kept horizontal, like “US”, “25”, “OK”. Bambook supports this via the <code>tateChuYoko(bool, int)?</code> parameter.
+Set it to <code>true</code> and define the max character count (inclusive).
+For example, <code>orientation: BambookTextOrientation.mixed</code> combined with <code>tateChuYoko: (true, 2)</code> means:</p>
+<ul>
+  <li>Normal Latin text is rotated (sideways).</li>
+  <li>But any string with &lt;= 2 characters (like “UI” in Block D) will be treated as Tate-chu-yoko (horizontal-in-vertical).</li>
+</ul>
+
+<p><img src="/assets/images/8323bc28f3999563112393ecd0cd8993.jpg" alt="Latin text handling examples" class="showImage"></p>
+
+<p class="tips-info">Heads up! <code>tateChuYoko</code> currently doesn’t support advanced GSUB features, so it might not be perfect. Use your judgment.</p>
+
+<p class="tips-warning">For the character count in <code>tateChuYoko</code>: Passing a negative integer disables it. Theoretically, in Dart, you could pass up to 2^63-1 (or whatever ECMAScript allows on Web), but… please don’t. If you want <em>lots</em> of horizontal Latin text, just use <code>BambookTextOrientation.tateChuYoko</code>.</p>
+
+<h3 id="kinsoku-line-breaking-rules">Kinsoku (Line Breaking Rules)</h3>
+<p>“Kinsoku” (Japanese for “prohibition rules”) ensures punctuation marks don’t end up in awkward places—like a period starting a new line. It keeps the text looking clean. Usually, “points” like commas, periods, and colons cannot start a line.
+This is enabled by default. You can control it via <code>applyKinsoku: bool</code>. If you’re not writing in CJK or have a special use case, feel free to turn it off.</p>
+
+<p><img src="/assets/images/c419be0729b5173eadb0183b50500df0.jpg" alt="Kinsoku text wrapping" class="showImage"></p>
+
+<p class="tips-info">In Bambook 0.0.4, Kinsoku uses a “push-out” logic. We’re working on smarter, more flexible algorithms for future versions.</p>
+
+<h3 id="line-height--character-spacing">Line Height &amp; Character Spacing</h3>
+
+<p>In default Flutter <code>Text</code>, you use <code>height</code> and <code>letterSpacing</code>. Bambook uses these under the hood, but exposes its own controls: <code>lineSpacing</code> and <code>letterSpacing</code>.
+Default <code>height</code> <em>technically</em> still works, but we recommend sticking to Bambook’s parameters to avoid confusion and side effects.</p>
+
+<hr>
+<p>Hope this guide levels up your Bambook game xd! enjoy!</p>
+</article>
+  </main>
+
+  <!-- Prism JS -->
+    <script src="https://unpkg.com/prismjs/prism.js"></script>
+    <script src="https://unpkg.com/prismjs/components/prism-ruby.min.js"></script>
+    <script src="https://unpkg.com/prismjs/components/prism-javascript.min.js"></script>
+    <script src="https://unpkg.com/prismjs/components/prism-python.min.js"></script>
+    <script src="https://unpkg.com/prismjs/components/prism-markdown.min.js"></script>
+    <script src="https://unpkg.com/prismjs/components/prism-bash.min.js"></script>
+    <script src="https://unpkg.com/prismjs/components/prism-dart.min.js"></script>
+    <script src="https://unpkg.com/prismjs/components/prism-yaml.min.js"></script>
+
+  
+    <script src="/assets/script/extras.js"></script>
+  <script>
+  (function liveReload(){
+    var last=null;
+    function tick(){
+      fetch('/.stamp',{cache:'no-store'}).then(function(r){
+        if(!r.ok) return;
+        return r.text();
+      }).then(function(txt){
+        if(typeof txt!=='string') return;
+        if(last && last!==txt) location.reload();
+        last = txt;
+      }).catch(function(){});
+      setTimeout(tick,1000);
+    }
+    tick();
+  })();
+  </script>
+
+
+  <script>
+  (function(){
+    var mqMobile = window.matchMedia('(max-width: 600px)');
+    var body = document.body;
+    var sidebar = document.getElementById('sidebarBox');
+    var toggleBtn = document.getElementById('sidebarToggle');
+    var backdrop = document.getElementById('sidebarBackdrop');
+    if(!sidebar || !toggleBtn || !backdrop) return;
+
+    var isOpen = false, lastScrollY = 0;
+
+    function lockScroll(){
+      lastScrollY = window.scrollY || window.pageYOffset || 0;
+      body.style.position = 'fixed';
+      body.style.top = (-lastScrollY) + 'px';
+      body.style.left = '0'; body.style.right = '0'; body.style.width = '100%';
+    }
+    function unlockScroll(){
+      body.style.position = '';
+      body.style.top = ''; body.style.left = ''; body.style.right = ''; body.style.width = '';
+      window.scrollTo(0,lastScrollY);
+    }
+    function openSidebar(){
+      if(isOpen) return;
+      isOpen = true;
+      sidebar.classList.add('active');
+      sidebar.setAttribute('aria-hidden','false');
+      toggleBtn.setAttribute('aria-expanded','true');
+      backdrop.style.display = 'block';
+      lockScroll();
+    }
+    function closeSidebar(){
+      if(!isOpen) return;
+      isOpen = false;
+      sidebar.classList.remove('active');
+      sidebar.setAttribute('aria-hidden','true');
+      toggleBtn.setAttribute('aria-expanded','false');
+      backdrop.style.display = 'none';
+      unlockScroll();
+    }
+    function toggleSidebar(){
+      if(!mqMobile.matches) return;
+      isOpen ? closeSidebar() : openSidebar();
+    }
+
+    toggleBtn.addEventListener('click', toggleSidebar);
+    backdrop.addEventListener('click', closeSidebar);
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape' && isOpen) closeSidebar(); });
+    sidebar.addEventListener('click', function(e){
+      var a = e.target.closest('a');
+      if(a && mqMobile.matches){ setTimeout(closeSidebar,0); }
+    });
+    mqMobile.addEventListener('change', function(ev){
+      if(!ev.matches){ closeSidebar(); }
+    });
+
+    var sx=0, sy=0;
+    sidebar.addEventListener('touchstart', function(e){
+      if(!mqMobile.matches) return;
+      var t=e.touches[0]; sx=t.clientX; sy=t.clientY;
+    }, {passive:true});
+    sidebar.addEventListener('touchend', function(e){
+      if(!mqMobile.matches) return;
+      var t=e.changedTouches[0], dx=t.clientX-sx, dy=Math.abs(t.clientY-sy);
+      if(dx < -60 && dy < 40){ closeSidebar(); }
+    }, {passive:true});
+  })();
+  </script>
+  <script>
+workbox.routing.registerRoute(
+  ({request}) => request.destination === 'video',
+  new workbox.strategies.CacheFirst({
+    plugins: [new workbox.rangeRequests.Plugin()],
+    cacheName: 'videos',
+  })
+);
+  </script>
+</body>
+</html>
