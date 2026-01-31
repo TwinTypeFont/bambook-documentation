@@ -34,7 +34,7 @@ import 'package:bambook/bambook.dart';
 
 ```dart
 const BambookText(
-  "Seasons change, sun and moon revolve, only the ink remains as solid as stone. --TwinType",
+  "四季遞嬗，日月更迭，唯有筆墨如石堅。--TwinType",
   style: TextStyle(
     fontSize: 22,
     color: Color.fromARGB(255, 8, 19, 76),
@@ -216,7 +216,7 @@ class _BambookDemoState extends State<BambookDemo> {
                       decoration: const BoxDecoration(border: null),
                       alignment: Alignment.center,
                       child: const BambookText(
-                        "Seasons change, sun and moon revolve, only the ink remains as solid as stone. --TwinType",
+                        "四季遞嬗，日月更迭，唯有筆墨如石堅。--TwinType",
                         style: TextStyle(
                           fontSize: 22,
                           color: Color.fromARGB(255, 8, 19, 76),
